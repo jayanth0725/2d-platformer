@@ -35,7 +35,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gstla")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }]
@@ -43,7 +43,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
 size = Vector2(10, 15)
 
-[node name="Slime" type="Node2D" unique_id=2141068093]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yynj0"]
+size = Vector2(10, 15)
+
+[node name="Green Slime" type="CharacterBody2D" unique_id=823849232]
 script = ExtResource("1_n6pvg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1104658878]
@@ -66,3 +69,7 @@ target_position = Vector2(-9, 0)
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=2013804935]
 position = Vector2(0, -7)
 target_position = Vector2(9, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853806500]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_yynj0")

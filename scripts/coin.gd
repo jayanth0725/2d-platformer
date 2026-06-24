@@ -1,9 +1,10 @@
 extends Area2D
 
-@onready var game_manager = %GameManager
+# Define a custom signal
+signal collected
 
 @onready var animation_player = $AnimationPlayer
 
 func _on_body_entered(_body: Node2D) -> void:
-	game_manager.add_point()
+	emit_signal("collected")
 	animation_player.play("pickup")
